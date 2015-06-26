@@ -1,0 +1,887 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Thomsoon Ui Kit Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Thomsoon Ui Kit Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap -->
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' media="all" />
+<!-- //bootstrap -->
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' media="all" />
+<script src="js/jquery-1.8.3.min.js"></script>
+<!--start-smoth-scrolling-->
+<!--webfonts-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!--webfonts-->	
+<script type="text/javascript" src="js/move-top.js"></script>
+		<script type="text/javascript" src="js/easing.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+<!-- chart -->
+<script src="js/Chart.js"></script>
+<!-- //chart -->
+<script src="js/snap.svg-min.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<!----Calender -------->
+  <link rel="stylesheet" href="css/clndr.css" type="text/css" />
+  <script src="js/underscore-min.js"></script>
+  <script src= "js/moment-2.2.1.js"></script>
+  <script src="js/clndr.js"></script>
+  <script src="js/site.js"></script>
+<!----End Calender -------->
+<script>$(document).ready(function(c) {
+	$('.alert-close').on('click', function(c){
+		$('.calender-right').fadeOut('slow', function(c){
+	  		$('.calender-right').remove();
+		});
+	});	  
+});
+</script>
+<script>$(document).ready(function(c) {
+	$('.alert-close1').on('click', function(c){
+		$('.content-grid-top').fadeOut('slow', function(c){
+	  		$('.content-grid-top').remove();
+		});
+	});	  
+});
+</script>
+<script>$(document).ready(function(c) {
+	$('.alert-close2').on('click', function(c){
+		$('.content-grid-bottom').fadeOut('slow', function(c){
+	  		$('.content-grid-bottom').remove();
+		});
+	});	  
+});
+</script>
+<script>$(document).ready(function(c) {
+	$('.alert-close3').on('click', function(c){
+		$('.content-right-top').fadeOut('slow', function(c){
+	  		$('.content-right-top').remove();
+		});
+	});	  
+});
+</script>
+<script>$(document).ready(function(c) {
+	$('.alert-close4').on('click', function(c){
+		$('.statistics-info').fadeOut('slow', function(c){
+	  		$('.statistics-info').remove();
+		});
+	});	  
+});
+</script>
+<script>$(document).ready(function(c) {
+	$('.alert-close5').on('click', function(c){
+		$('.footer-nav').fadeOut('slow', function(c){
+	  		$('.footer-nav').remove();
+		});
+	});	  
+});
+</script>
+<script>$(document).ready(function(c) {
+	$('.alert-close6').on('click', function(c){
+		$('.temp-top').fadeOut('slow', function(c){
+	  		$('.temp-top').remove();
+		});
+	});	  
+});
+</script>
+<script>$(document).ready(function(c) {
+	$('.alert-close7').on('click', function(c){
+		$('.temp-bottom').fadeOut('slow', function(c){
+	  		$('.temp-bottom').remove();
+		});
+	});	  
+});
+</script>
+<script>$(document).ready(function(c) {
+	$('.alert-close8').on('click', function(c){
+		$('.contact').fadeOut('slow', function(c){
+	  		$('.contact').remove();
+		});
+	});	  
+});
+</script>
+<script>$(document).ready(function(c) {
+	$('.alert-close9').on('click', function(c){
+		$('.today-temp-bottom').fadeOut('slow', function(c){
+	  		$('.today-temp-bottom').remove();
+		});
+	});	  
+});
+</script>
+</head>
+<body>
+	<div class="total-content ">
+		<div class="header-top">
+			<!-- header -->
+			<div class="header">
+				<a href="index.html"><img src="images/logo.png" alt=""></a>
+			</div>
+			<!-- //header -->
+			<div class="header-nav">
+				<ul>
+					<li><a href="#">HOME</a></li>    
+					<li><a href="#" class="active">ABOUT US</a></li>
+					<li><a href="#">PORTFOLIO</a></li>     
+					<li><a href="#">CONTACT</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- header-bottom -->
+		<div class="header-bottom">
+			<div class="col-md-8 banner">
+				<div class="banner-img">
+					<img src="images/1.jpg" alt="" />
+				</div>
+				<div class="banner-info">
+					<!-- banner Slider starts Here -->
+					<script src="js/responsiveslides.min.js"></script>
+					 <script>
+						// You can also use "$(window).load(function() {"
+						$(function () {
+						  // Slideshow 4
+						  $("#slider3").responsiveSlides({
+							auto: true,
+							pager: false,
+							nav: true,
+							speed: 500,
+							namespace: "callbacks",
+							before: function () {
+							  $('.events').append("<li>before event fired.</li>");
+							},
+							after: function () {
+							  $('.events').append("<li>after event fired.</li>");
+							}
+						  });
+					
+						});
+					  </script>
+					<!--//End-slider-script -->
+					<div  id="top" class="callbacks_container">
+						<ul class="rslides" id="slider3">
+							<li>
+								<div class="bnner-text">
+									<p>NO WAY?
+										<span>FREE UI DOWNLOAD</span>
+									</p>
+								</div>
+							</li>
+							<li>
+								<div class="bnner-text">
+									<p>DESIGNER
+										<span>DOWNLOAD FREE UI</span>
+									</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 last-grid">
+				<div class="calender-right">
+					<div class="alert-close"> </div>
+					<h3>CALENDAR</h3>
+					<div class="bottom-border"> </div>
+					<div class="column_right_grid calender">
+	                      <div class="cal1"><div class="clndr"><div class="clndr-controls"><div class="clndr-control-button"><p class="clndr-previous-button">previous</p></div><div class="month">May 2015</div><div class="clndr-control-button rightalign"><p class="clndr-next-button">next</p></div></div><table class="clndr-table" border="0" cellspacing="0" cellpadding="0"><thead><tr class="header-days"><td class="header-day">S</td><td class="header-day">M</td><td class="header-day">T</td><td class="header-day">W</td><td class="header-day">T</td><td class="header-day">F</td><td class="header-day">S</td></tr></thead><tbody><tr><td class="day past adjacent-month last-month calendar-day-2015-04-26"><div class="day-contents">26</div></td><td class="day past adjacent-month last-month calendar-day-2015-04-27"><div class="day-contents">27</div></td><td class="day past adjacent-month last-month calendar-day-2015-04-28"><div class="day-contents">28</div></td><td class="day past adjacent-month last-month calendar-day-2015-04-29"><div class="day-contents">29</div></td><td class="day past adjacent-month last-month calendar-day-2015-04-30"><div class="day-contents">30</div></td><td class="day past calendar-day-2015-05-01"><div class="day-contents">1</div></td><td class="day past calendar-day-2015-05-02"><div class="day-contents">2</div></td></tr><tr><td class="day past calendar-day-2015-05-03"><div class="day-contents">3</div></td><td class="day past calendar-day-2015-05-04"><div class="day-contents">4</div></td><td class="day past calendar-day-2015-05-05"><div class="day-contents">5</div></td><td class="day past calendar-day-2015-05-06"><div class="day-contents">6</div></td><td class="day past calendar-day-2015-05-07"><div class="day-contents">7</div></td><td class="day past calendar-day-2015-05-08"><div class="day-contents">8</div></td><td class="day past calendar-day-2015-05-09"><div class="day-contents">9</div></td></tr><tr><td class="day past event calendar-day-2015-05-10"><div class="day-contents">10</div></td><td class="day past event calendar-day-2015-05-11"><div class="day-contents">11</div></td><td class="day past event calendar-day-2015-05-12"><div class="day-contents">12</div></td><td class="day past event calendar-day-2015-05-13"><div class="day-contents">13</div></td><td class="day today event calendar-day-2015-05-14"><div class="day-contents">14</div></td><td class="day calendar-day-2015-05-15"><div class="day-contents">15</div></td><td class="day calendar-day-2015-05-16"><div class="day-contents">16</div></td></tr><tr><td class="day calendar-day-2015-05-17"><div class="day-contents">17</div></td><td class="day calendar-day-2015-05-18"><div class="day-contents">18</div></td><td class="day calendar-day-2015-05-19"><div class="day-contents">19</div></td><td class="day calendar-day-2015-05-20"><div class="day-contents">20</div></td><td class="day event calendar-day-2015-05-21"><div class="day-contents">21</div></td><td class="day event calendar-day-2015-05-22"><div class="day-contents">22</div></td><td class="day event calendar-day-2015-05-23"><div class="day-contents">23</div></td></tr><tr><td class="day calendar-day-2015-05-24"><div class="day-contents">24</div></td><td class="day calendar-day-2015-05-25"><div class="day-contents">25</div></td><td class="day calendar-day-2015-05-26"><div class="day-contents">26</div></td><td class="day calendar-day-2015-05-27"><div class="day-contents">27</div></td><td class="day calendar-day-2015-05-28"><div class="day-contents">28</div></td><td class="day calendar-day-2015-05-29"><div class="day-contents">29</div></td><td class="day calendar-day-2015-05-30"><div class="day-contents">30</div></td></tr><tr><td class="day calendar-day-2015-05-31"><div class="day-contents">31</div></td><td class="day adjacent-month next-month calendar-day-2015-06-01"><div class="day-contents">1</div></td><td class="day adjacent-month next-month calendar-day-2015-06-02"><div class="day-contents">2</div></td><td class="day adjacent-month next-month calendar-day-2015-06-03"><div class="day-contents">3</div></td><td class="day adjacent-month next-month calendar-day-2015-06-04"><div class="day-contents">4</div></td><td class="day adjacent-month next-month calendar-day-2015-06-05"><div class="day-contents">5</div></td><td class="day adjacent-month next-month calendar-day-2015-06-06"><div class="day-contents">6</div></td></tr></tbody></table></div></div>
+					 </div>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<!-- //header-bottom -->
+		<!-- content-middle -->
+		<div class="content-middle">
+			<div class="col-md-4 content-left">
+				<div class="content-grid-top">
+					<div class="alert-close1"> </div>
+					<img src="images/2.png" alt="" />
+					<h4>THOMSOON</h4>
+					<p>Front-end developer, UI/Web
+						<span>designer and video</span>
+						producer
+					</p>
+					<ul>
+						<li><a href="#" class="facebook"> </a></li>
+						<li><a href="#" class="facebook twitter"> </a></li>
+						<li><a href="#" class="facebook dribbble"> </a></li>
+						<li><a href="#" class="facebook behance"> </a></li>
+					</ul>
+				</div>
+				<div class="content-grid-bottom">
+					<div class="alert-close2"> </div>
+					<div class="bottom-border"> </div>
+					<h4>DESCRIPTION</h4>
+					<p>Free UI kit clean and modern 
+						<span>multipurpose free for all.</span>
+					</p>
+					<div class="bottom-border bottom-border1"> </div>
+					<h4>AUTOR</h4>
+					<p>Tomasz Mazurczak</p>
+					<div class="bottom-border bottom-border1"> </div>
+					<h4>SHARE</h4>
+					<ul>
+						<li><a href="#" class="facebook"> </a></li>
+						<li><a href="#" class="facebook twitter"> </a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-8 content-right">
+				<div class="content-right-top">
+					<div class="alert-close3"> </div>
+					<div class="col-md-3 content-right-img">
+						<img src="images/3.png" alt="" />
+					</div>
+					<div class="col-md-9 content-right-info">
+						<h4>THOMSOON</h4>
+						<p>Front-end developer, UI/Web
+							designer <span>and video
+							producer</span>
+						</p>
+					</div>
+					<div class="clearfix"> </div>
+					<ul>
+						<li><a href="#" class="facebook"> </a></li>
+						<li><a href="#" class="facebook twitter"> </a></li>
+						<li><a href="#" class="facebook dribbble"> </a></li>
+						<li><a href="#" class="facebook behance"> </a></li>
+					</ul>
+				</div>
+				<div class="statistics-grids">
+					<div class="col-md-6 statistics">
+						<div class="statistics-info">
+							<div class="alert-close4"> </div>
+									<h4>STATISTICS</h4>
+									<div class="bottom-border bottom-border2"> </div>
+								<!---start-chart---->
+								<!--graph-->
+								<link rel="stylesheet" href="css/graph.css">
+								<script src="js/jquery.flot.min.js"></script>
+								<!--//graph-->
+										<script>
+										$(document).ready(function () {
+										
+											// Graph Data ##############################################
+											var graphData = [{
+													// Returning Visits
+													data: [ [6, 4500], [7,3500], [8, 6550], [9, 7600], ],
+													color: '#59676B',
+													points: { radius: 4, fillColor: '#59676B' }
+												}
+											];
+										
+											// Lines Graph #############################################
+											$.plot($('#graph-lines'), graphData, {
+												series: {
+													points: {
+														show: true,
+														radius: 1
+													},
+													lines: {
+														show: true
+													},
+													shadowSize: 0
+												},
+												grid: {
+													color: '#59676B',
+													borderColor: 'transparent',
+													borderWidth: 10,
+													hoverable: true
+												},
+												xaxis: {
+													tickColor: 'transparent',
+													tickDecimals: false
+												},
+												yaxis: {
+													tickSize: 1200
+												}
+											});
+										
+											// Bars Graph ##############################################
+											$.plot($('#graph-bars'), graphData, {
+												series: {
+													bars: {
+														show: true,
+														barWidth: .9,
+														align: 'center'
+													},
+													shadowSize: 0
+												},
+												grid: {
+													color: '#fff',
+													borderColor: 'transparent',
+													borderWidth: 20,
+													hoverable: true
+												},
+												xaxis: {
+													tickColor: 'transparent',
+													tickDecimals: 2
+												},
+												yaxis: {
+													tickSize: 1000
+												}
+											});
+										
+											// Graph Toggle ############################################
+											$('#graph-bars').hide();
+										
+											$('#lines').on('click', function (e) {
+												$('#bars').removeClass('active');
+												$('#graph-bars').fadeOut();
+												$(this).addClass('active');
+												$('#graph-lines').fadeIn();
+												e.preventDefault();
+											});
+										
+											$('#bars').on('click', function (e) {
+												$('#lines').removeClass('active');
+												$('#graph-lines').fadeOut();
+												$(this).addClass('active');
+												$('#graph-bars').fadeIn().removeClass('hidden');
+												e.preventDefault();
+											});
+										
+											// Tooltip #################################################
+											function showTooltip(x, y, contents) {
+												$('<div id="tooltip">' + contents + '</div>').css({
+													top: y - 16,
+													left: x + 20
+												}).appendTo('body').fadeIn();
+											}
+										
+											var previousPoint = null;
+										
+											$('#graph-lines, #graph-bars').bind('plothover', function (event, pos, item) {
+												if (item) {
+													if (previousPoint != item.dataIndex) {
+														previousPoint = item.dataIndex;
+														$('#tooltip').remove();
+														var x = item.datapoint[0],
+															y = item.datapoint[1];
+															showTooltip(item.pageX, item.pageY, y+ x );
+													}
+												} else {
+													$('#tooltip').remove();
+													previousPoint = null;
+												}
+											});
+										
+										});
+										</script>
+								<!-- Graph HTML -->
+								<div id="graph-wrapper">
+									<div class="graph-container">
+										<div id="graph-lines"> </div>
+										<div id="graph-bars"> </div>
+									</div>
+								</div>
+								<!-- end Graph HTML -->
+								<!---//End-chart---->
+						</div>
+					</div>
+					<div class="col-md-6 video-grid">
+						<div class="video">
+							<iframe src="https://player.vimeo.com/video/42502629" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="work-grids">
+					<div class="work-grid-left">
+						<a href="#">
+							<div class="bottom-border bottom-border3"> </div>
+							<span>MY</span> WORK
+						</a>
+					</div>
+					<div class="work-grid-left work-grid-right">
+						<a href="#">
+							<div class="bottom-border bottom-border4"> </div>
+							<span>LOAD</span> MORE
+						</a>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<!-- //content-middle -->
+		<!-- description -->
+		<div class="description">
+			<div class="description-img">
+				<img src="images/2.jpg" alt="" />
+				<div class="location">
+					<h5>CLEAN</h5>
+					<p>High resolution</p>
+				</div>
+				<div class="description-grids">
+					<div class="col-md-4 description-left">
+						<h4><span>DESCRIPTION</span></h4>
+						<p>Free UI kit clean and modern 
+							<span>multipurpose free for all.<span>
+						</p>
+					</div>
+					<div class="col-md-4 description-left">
+						<h4><span>AUTHOR</span></h4>
+						<p>Tomasz Mazurczak</p>
+					</div>
+					<div class="col-md-4 description-left">
+						<h4><span>SHARE</span></h4>
+						<ul>
+							<li><a href="#" class="facebook"> </a></li>
+							<li><a href="#" class="facebook twitter"> </a></li>
+						</ul>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+		<!-- //description -->
+		<!-- description-bottom -->
+		<div class="description-bottom">
+			<div class="col-md-4 description-bottom-left-grid">
+				<div class="content-grid-top description-bottom-left">
+					<img src="images/4.png" alt="" />
+					<h4>THOMSOON</h4>
+					<p>view profile 
+						<span>Statistics</span>
+						Send message
+					</p>
+					<ul>
+						<li><a href="#" class="facebook"> </a></li>
+						<li><a href="#" class="facebook twitter"> </a></li>
+						<li><a href="#" class="facebook dribbble"> </a></li>
+						<li><a href="#" class="facebook behance"> </a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-4 description-bottom-right-grid">
+				<div class="description-bottom-right">
+					<div class="menu_vertical">
+						<section class="accordation_menu">
+							<div>
+								<input id="label-1" name="lida" type="radio" checked="">
+								<label for="label-1" id="item1"><i class="ferme"> </i><span class="m_5">TAGES</span><i class="icon-plus-sign i-right1"></i><i class="icon-minus-sign i-right2"></i></label>
+								<div class="content1" id="a1">
+									<ul class="news_list">
+										<li class="date_desc">
+											<a href="#">thomsoon</a>
+										</li>
+										<li class="date_desc">
+											<a href="#">Free</a>
+										</li>
+										<li class="date_desc">
+											<a href="#">UI</a>
+										</li>
+										<div class="clearfix"> </div>
+									</ul>
+									<ul class="news_list news_list1">
+										<li class="date_desc">
+											<a href="#">UX</a>
+										</li>
+										<li class="date_desc">
+											<a href="#">Download</a>
+										</li>
+										<div class="clearfix"> </div>
+									</ul>
+								</div>
+							</div>
+							<div>
+								<input id="label-2" name="lida" type="radio">
+								<label for="label-2" id="item2"><i class="icon-leaf" id="i2"></i><span class="m_5">COMMENTS</span><i class="icon-plus-sign i-right1"></i><i class="icon-minus-sign i-right2"></i></label>
+								<div class="content1" id="a2">
+									<div class="c-grids">
+										<div class="c-img">
+											<img src="images/2.png" alt="" />
+										</div>
+										<div class="c-text">
+											<p>Lorem ipsum dolor sit amet conse ctetur magna aliqua</p>
+											<ul>
+												<li>MARCH 08, 2015</li>
+												<li><a href="#">Reply</a></li>
+											</ul>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+									<div class="c-grids">
+										<div class="c-img">
+											<img src="images/3.png" alt="" />
+										</div>
+										<div class="c-text">
+											<p>Lorem ipsum dolor sit amet conse ctetur magna aliqua</p>
+											<ul>
+												<li>MAY 14, 2015</li>
+												<li><a href="#">Reply</a></li>
+											</ul>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<!-- //description-bottom -->
+		<!-- line -->
+		<div class="line">
+			<ul>
+				<li class="line1"> </li>
+				<li class="line1 line2"> </li>
+				<li class="line1 line3"> </li>
+				<li class="line1 line4"> </li>
+				<li class="line1 line5"> </li>
+				<li class="line1 line6"> </li>
+				<li class="line1 line7"> </li>
+				<div class="clearfix"> </div>
+			</ul>
+		</div>
+		<!-- //line -->
+		<!-- tools -->
+		<div class="tools">
+			<div class="col-md-4 tools-left">
+				<div class="kitchen-tool">
+					<div class="kitchen-info">
+						<p>01/14</p>
+						<h4>KITCHEN TOOLS</h4>
+						<div class="r-more">
+							<a href="#" class="hvr-shutter-out-horizontal">READ MORE</a>
+						</div>
+					</div>
+					<div class="kitchen-img">
+						<img src="images/5.jpg" alt="" />
+					</div>
+				</div>
+				<div class="kitchen-tool-bottom">
+					<img src="images/6.jpg" alt="" />
+				</div>
+				<div class="temp-top">
+					<div class="alert-close6"> </div>
+					<div class="temp-top-info">
+						<h4><span>WARSZAWA</span></h4>
+					</div>
+					<div class="temp-bottom-info">
+						<div class="temp-bottom-info-left">
+							<img src="images/cloud.png" alt="" />
+						</div>
+						<div class="temp-bottom-info-right">
+							<p class="date">FRI, 24/05</p>
+							<h5>26°C</h5>
+							<p class="dry">DRY</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<div class="temp-bottom">
+					<div class="alert-close7"> </div>
+					<div class="temp-top-info">
+						<h4><span>WARSZAWA</span></h4>
+					</div>
+					<div class="temp-bottom-info temp-bottom-info-white">
+						<div class="temp-bottom-info-left">
+							<img src="images/cloud1.png" alt="" />
+						</div>
+						<div class="temp-bottom-info-right temp-bottom-info-black">
+							<p class="date">FRI, 24/05</p>
+							<h5>26°C</h5>
+							<p class="dry">DRY</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<div class="contact">
+					<div class="alert-close8"> </div>
+					<div class="contact-top">
+						<h4><span>LOGIN</span></h4>
+						<form>
+							<input type="text" class="email" placeholder="Email" required="required" pattern="([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?">
+							<input type="password" placeholder="Password" required="required" pattern=".{6,}" title="Minimum 6 characters required" autocomplete="off">
+							<input type="submit" value="Sign In">
+						</form>
+					</div>
+					<div class="contact-top">
+						<h4><span>REGISTER</span></h4>
+						<form>
+							<input type="text" class="email" placeholder="Email" required="required" pattern="([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?">
+							<input type="password" placeholder="Password" required="required" pattern=".{6,}" title="Minimum 6 characters required" autocomplete="off">
+							<input type="text" class="email" placeholder="Mobile Number" maxlength="10" pattern="[1-9]{1}\d{9}" title="Enter a valid mobile number">
+							<input type="submit" value="Sign Up">
+						</form>
+					</div>
+				</div>
+				<div class="clients">
+					<p>34<span>clients</span></p>
+				</div>
+			</div>
+			<div class="col-md-8 tools-right">
+				<div class="col-md-6 print-right">
+					<div class="print-right-top">
+						<img src="images/7.jpg" alt="" />
+					</div>
+					<div class="print-right-bottom">
+						<p>03/14</p>
+						<h4>RETRO STYLE
+							<span>KEYBOARD</span>
+						</h4>
+						<a href="#">READ MORE</a>
+					</div>
+					<div class="work print-right-bottom">
+						<p>09/14</p>
+						<h4>MY WORK</h4>
+						<a href="#">READ MORE</a>
+					</div>
+					<div class="today-temp">
+						<section class="accordation_menu">
+							<div>
+								<input id="label-3" name="lida" type="radio">
+								<label for="label-3" id="item3"><i class="icon-trophy" id="i3"></i><span class="m_5">TODAY</span><i class="icon-plus-sign i-right1"></i><i class="icon-minus-sign i-right2"></i></label>
+								<div class="content1" id="a3">
+									<div class="t-temp">
+										<img src="images/cloud2.png" alt="" />
+										<p class="date">FRI, 24/05</p>
+										<h5>26°C</h5>
+										<p class="dry">DRY</p>
+									</div>
+								</div>
+							</div>
+							<div>
+								<input id="label-4" name="lida" type="radio">
+								<label for="label-4" id="item4"><i class="icon-trophy" id="i4"></i><span class="m_5">Yesterday</span><i class="icon-plus-sign i-right1"></i><i class="icon-minus-sign i-right2"></i></label>
+								<div class="content1" id="a4">
+									<div class="t-temp">
+										<img src="images/cloud2.png" alt="" />
+										<p class="date">THU, 23/05</p>
+										<h5>24°C</h5>
+										<p class="dry">DRY</p>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="today-temp-bottom">
+						<div class="alert-close9"> </div>
+						<div class="temp-top-info">
+							<h4><span>WARSZAWA</span></h4>
+						</div>
+						<div class="map">
+							<canvas id="canvas" height="326" width="383"></canvas>
+								<script>
+
+									var barChartData = {
+										labels : ["Jan","Feb","March","April","May","June","July"],
+										datasets : [
+											{
+												fillColor : "rgb(175, 163, 118)",
+												strokeColor : "rgb(175, 163, 118)",
+												data : [65,59,90,81,56,55,40]
+											},
+											{
+												fillColor : "rgb(0, 0, 0)",
+												strokeColor : "rgb(0, 0, 0)",
+												data : [28,48,40,19,96,27,100]
+											}
+										]
+										
+									}
+
+								var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Bar(barChartData);
+								
+								</script>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 print-right-right">
+					<div class="print-right-logo">
+						<ul>
+							<li><a href="#"><img src="images/t1.png" alt="" /></a></li>
+							<li><a href="#"><img src="images/t2.png" alt="" /></a></li>
+							<li><a href="#"><img src="images/t3.png" alt="" /></a></li>
+						</ul>
+					</div>
+					<div class="print-right-buttons">
+						<ul>
+							<li><a href="#" class="white-button hvr-bounce-to-right">READ MORE</a></li>
+							<li><a href="#" class="gray-button hvr-bounce-to-top">ENTER</a></li>
+							<li><a href="#" class="border-button hvr-shutter-out-horizontal">READ MORE</a></li>
+						</ul>
+					</div>
+					<div class="clean-grid">
+						<div class="clean-grid-info">
+							<h4>CLEAN</h4>
+							<p>Free UI kit clean
+								and modern
+								multipurpose
+								free for all.
+							</p>
+							<a href="#">READ MORE</a>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+				<div class="one-item">
+					<div class="one-item-left">
+						<img src="images/2.png" alt="" />
+					</div>
+					<div class="one-item-right">
+						<h4>THOMSOON</h4>
+						<p>Front-end developer, UI/Web
+							<span>designer and video producer</span>
+						</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<!-- //tools -->
+		<!-- icons -->
+		<div class="icons">
+			<div class="col-md-8 icon-left">
+				<div class="icon-left-top">
+					<section class="si-icons si-icons-default">
+						<span class="si-icon si-icon-hamburger-cross h-icon" data-icon-name="hamburgerCross"></span>
+						<span class="si-icon si-icon-nav-left-arrow l-icon" data-icon-name="navLeftArrow"></span>
+						<span class="si-icon si-icon-nav-up-arrow u-icon" data-icon-name="navUpArrow"></span>
+						<span class="si-icon si-icon-right-arrow r-icon" data-icon-name="rightArrow"></span>
+						<span class="si-icon si-icon-down-arrow d-icon" data-icon-name="downArrow"></span>
+					</section>
+				</div>
+				<div class="icon-left-bottom">
+					<div class="col-md-6 icon-left-left">
+						<section class="si-icons si-icons-default">
+							<span class="si-icon si-icon-hamburger" data-icon-name="hamburger"></span>
+							<span class="si-icon si-icon-plus" data-icon-name="plus"></span>
+							<span class="si-icon si-icon-equalizer" data-icon-name="equalizer"></span>
+							<span class="si-icon si-icon-clock" data-icon-name="clock"></span>
+							<span class="si-icon si-icon-right-arrow" data-icon-name="rightArrow"></span>
+							<span class="si-icon si-icon-flag" data-icon-name="flag"></span>
+							<span class="si-icon si-icon-zoom" data-icon-name="zoom"></span>
+							<span class="si-icon si-icon-plus-cross" data-icon-name="plusCross"></span>
+							<span class="si-icon si-icon-maximize-rotate" data-icon-name="maximizeRotate"></span>
+						</section>
+					</div>
+					<div class="col-md-6 icon-left-right">
+						<div class="search">
+							<form>
+								<input type="text" value="Search.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}">
+								<input type="submit" value="">
+							</form>
+						</div>
+						<div class="icon-left-right-logo">
+							<a href="#"><img src="images/f-logo.png" alt="" /></a>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+					<script src="js/svgicons-config.js"></script>
+					<script src="js/svgicons.js"></script>
+					<script>
+						(function() {
+							// initialize all
+							
+							[].slice.call( document.querySelectorAll( '.si-icons-default > .si-icon' ) ).forEach( function( el ) {
+								var svgicon = new svgIcon( el, svgIconConfig );
+							} );
+
+							new svgIcon( document.querySelector( '.si-icons-easing .si-icon-nav-left-arrow' ), svgIconConfig, { easing : mina.backin } );
+							new svgIcon( document.querySelector( '.si-icons-easing .si-icon-hamburger' ), svgIconConfig, { easing : mina.backin } );
+							new svgIcon( document.querySelector( '.si-icons-easing .si-icon-plus' ), svgIconConfig, { easing : mina.backin } );
+							new svgIcon( document.querySelector( '.si-icons-easing .si-icon-volume' ), svgIconConfig, { easing : mina.backin } );
+							new svgIcon( document.querySelector( '.si-icons-easing .si-icon-hourglass' ), svgIconConfig, { easing : mina.backin } );
+							new svgIcon( document.querySelector( '.si-icons-easing .si-icon-equalizer' ), svgIconConfig, { easing : mina.backin } );
+							new svgIcon( document.querySelector( '.si-icons-easing .si-icon-hamburger-cross' ), svgIconConfig, { easing : mina.elastic, speed: 600 } );
+							new svgIcon( document.querySelector( '.si-icons-easing .si-icon-trash' ), svgIconConfig, { easing : mina.elastic, speed: 600 } );
+							new svgIcon( document.querySelector( '.si-icons-easing .si-icon-clock' ), svgIconConfig, { easing : mina.elastic, speed: 600 } );
+							new svgIcon( document.querySelector( '.si-icons-easing .si-icon-maximize' ), svgIconConfig, { easing : mina.elastic, speed: 600 } );
+							new svgIcon( document.querySelector( '.si-icons-easing .si-icon-contract' ), svgIconConfig, { easing : mina.elastic, speed: 600 } );
+							new svgIcon( document.querySelector( '.si-icons-easing .si-icon-glass-empty' ), svgIconConfig, { easing : mina.elastic, speed: 600 } );
+							new svgIcon( document.querySelector( '.si-icons-easing .si-icon-zoom' ), svgIconConfig, { easing : mina.elastic, speed: 600 } );
+							new svgIcon( document.querySelector( '.si-icons-easing .si-icon-right-arrow' ), svgIconConfig, { easing : mina.backin } );
+							new svgIcon( document.querySelector( '.si-icons-easing .si-icon-down-arrow' ), svgIconConfig, { easing : mina.backin } );
+			
+							new svgIcon( document.querySelector( '.si-icons-hover .si-icon-nav-left-arrow' ), svgIconConfig, { easing : mina.backin, evtoggle : 'mouseover', size : { w : 128, h : 128 } } );
+							new svgIcon( document.querySelector( '.si-icons-hover .si-icon-clock' ), svgIconConfig, { easing : mina.backin, evtoggle : 'mouseover', size : { w : 128, h : 128 } } );
+							new svgIcon( document.querySelector( '.si-icons-hover .si-icon-hamburger' ), svgIconConfig, { easing : mina.backin, evtoggle : 'mouseover', size : { w : 128, h : 128 } } );
+							new svgIcon( document.querySelector( '.si-icons-hover .si-icon-flag' ), svgIconConfig, { easing : mina.backin, evtoggle : 'mouseover', size : { w : 128, h : 128 } } );
+							new svgIcon( document.querySelector( '.si-icons-hover .si-icon-zoom' ), svgIconConfig, { easing : mina.backin, evtoggle : 'mouseover', size : { w : 128, h : 128 } } );
+							new svgIcon( document.querySelector( '.si-icons-hover .si-icon-maximize' ), svgIconConfig, { easing : mina.backin, evtoggle : 'mouseover', size : { w : 128, h : 128 } } );
+							new svgIcon( document.querySelector( '.si-icons-hover .si-icon-equalizer' ), svgIconConfig, { easing : mina.backin, evtoggle : 'mouseover', size : { w : 128, h : 128 } } );
+						})();
+					</script>
+			</div>
+			<div class="col-md-4 icon-right">
+				<div class="footer-nav">
+					<div class="alert-close5"> </div>
+					<ul>
+						<li><a href="#">HOME</a></li>
+						<li><a href="#" class="active">ABOUT US</a></li>
+						<li><a href="#">PORTFOLIO</a></li>
+						<li><a href="#">CONTACT</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<!-- //icons -->
+		<!-- footer -->
+		<div class="footer">
+			<div class="footer-grids">
+				<div class="col-md-3 blog">
+					<h4><span>BLOG</span></h4>
+					<div class="blog-info">
+						<p>No way! UI element
+							<span>Thomsoon</span>
+							<span>Your title</span>
+							Free mockup
+						</p>
+					</div>
+				</div>
+				<div class="col-md-3 blog shop">
+					<h4><span>SHOP</span></h4>	
+					<div class="blog-info">
+						<p>Please visit shop
+							<span>00 000 </span>
+							<span>United States</span>
+						</p>
+					</div>
+				</div>
+				<div class="col-md-3 blog social">
+					<h4><span>SOCIAL</span></h4>	
+					<div class="blog-info">
+						<ul>
+							<li><a href="#" class="behance">Behance</a></li>
+							<li><a href="#" class="facebook">Facebook</a></li>
+							<li><a href="#" class="dribbble">Dribbble</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-3 footer-logo">
+					<a href="#"><img src="images/f1-logo.png" alt="" /></a>
+					<div class="copyright">
+						<p>Template by <a href="http://w3layouts.com" target="target_blank">W3Layouts</a></p>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<!-- //footer -->
+	</div>
+</body>
+</html>
