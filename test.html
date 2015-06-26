@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>HTML学习2 布局 杨韬 2012.11.10</title>
+    <!-- 添加样式 -->
+    <style type="text/css"> 
+        /*布局颜色*/
+        div#head {background-color: #99bbaa;}/*背景色*/
+        div#menu {background-color: blue; 
+            height: 200px; 
+            width: 100px; 
+            float: left;    /*float位置*/
+            /*text-align: center;/*文字居中*/*/
+            }    
+        div#constent {background-color: yellow; height: 200px;width: 400px; float: left;}
+        div#footer {background: green; 
+            clear:both;/*有这一行才能在下边显示*/
+            text-align:center;}/*文字居中*/
+
+        /*项目边框*/
+        h1 {margin-bottom: 0;}/*h1底部间距=0各个块才能没有空隙*/
+    </style>    
+</head>
+
+<body>
+    <div id="head">        <!-- 添加4个分块 id可自己命名-->
+        <h1>头部</h1>        
+    </div>
+    <div id="menu">
+        <h1 align="center">菜单</h1><!-- 文字居中显示 -->
+        <ul><!-- 无序列表 -->
+            <li>标题1</li>
+            <li>标题1</li>
+            <li>标题1</li>
+        </ul>
+    </div>
+    <div id="constent">
+        <h1>内容</h1>
+    </div>
+    <div id="footer">
+        <h1>底部</h1>
+    </div>
+</body>
+</html>
