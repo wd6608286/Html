@@ -1,5 +1,5 @@
 #!c:\pyhton
-# -*- coding: gbk -*-
+# -*- coding: utf-8 -*-
 # 文件名：test.py
 
 from Tkinter import *           # 导入 Tkinter 库
