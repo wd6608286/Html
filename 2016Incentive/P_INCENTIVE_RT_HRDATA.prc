@@ -1,8 +1,8 @@
-CREATE OR REPLACE PROCEDURE P_INCENTIVE_RT_HRDATA(I_Q IN VARCHAR2) IS
+ï»¿CREATE OR REPLACE PROCEDURE P_INCENTIVE_RT_HRDATA(I_Q IN VARCHAR2) IS
   /*****************************************
-  --¹¦ÄÜ£ºRETAIL HRÐÅÏ¢£¬ÇëÏÈ¸üÐÂ hospital HRÐÅÏ¢,
-  --Ê±¼ä£º2013-02-29
-  --×÷Õß£ºÌ·³¬
+  --åŠŸèƒ½ï¼šRETAIL HRä¿¡æ¯ï¼Œè¯·å…ˆæ›´æ–° hospital HRä¿¡æ¯,
+  --æ—¶é—´ï¼š2013-02-29
+  --ä½œè€…ï¼šè°­è¶…
   ******************************************/
 
   V_LOG_ID     NUMBER;
@@ -13,13 +13,13 @@ CREATE OR REPLACE PROCEDURE P_INCENTIVE_RT_HRDATA(I_Q IN VARCHAR2) IS
   V_MONTH3     VARCHAR2(20);
   --V_ROW_NUM    NUMBER;
 BEGIN
-  V_LOG_ID     := F_INCENTIVE_LOG_ID; --»ñÈ¡ÈÕÖ¾ID
-  V_PROC_NAME  := 'P_INCENTIVE_RT_HRDATA'; --¹ý³ÌÃû
-  V_PARM_VALUS := I_Q; --¹ý³ÌÊäÈë²ÎÊý
-  --²åÈëÈÕÖ¾
+  V_LOG_ID     := F_INCENTIVE_LOG_ID; --èŽ·å–æ—¥å¿—ID
+  V_PROC_NAME  := 'P_INCENTIVE_RT_HRDATA'; --è¿‡ç¨‹å
+  V_PARM_VALUS := I_Q; --è¿‡ç¨‹è¾“å…¥å‚æ•°
+  --æ’å…¥æ—¥å¿—
   P_INCENTIVE_LOG_INFO_INSERT(V_LOG_ID, V_PROC_NAME, V_PARM_VALUS);
 
-  --¹ý³ÌÄÚÈÝ
+  --è¿‡ç¨‹å†…å®¹
   -----------------------------------------------------------------------
   IF SUBSTR(I_Q, 5, 2) = 'Q1' THEN
     V_MONTH1 := SUBSTR(I_Q, 1, 4) || '-01';
@@ -45,9 +45,9 @@ BEGIN
     V_MONTH3 := SUBSTR(I_Q, 1, 4) || '-12';
   END IF;
 
-  /*ÔËÐÐÒ½ÔºµÄHRÐÅÏ¢*/
+  /*è¿è¡ŒåŒ»é™¢çš„HRä¿¡æ¯*/
 
-  /*hr±í´¦Àí*/
+  /*hrè¡¨å¤„ç†*/
   DELETE FROM INCENTIVE_RT_HRDATA T WHERE T.Q = I_Q;
 
   INSERT INTO INCENTIVE_RT_HRDATA
@@ -79,12 +79,12 @@ BEGIN
                          TO_CHAR(TO_DATE(T.IMONTH, 'YYYY-MM'), 'Q') = T5.Q
                      AND T.WWID = T5.WWID));
 
-  --È¥¿Õ¸ñ
+  --åŽ»ç©ºæ ¼
   UPDATE INCENTIVE_RT_HRDATA T
      SET T.WWID   = REPLACE(T.WWID, ' ', ''),
          T.WWNAME = REPLACE(T.WWNAME, ' ', '');
 
-  -- É¾³ý²ú¼Ù
+  -- åˆ é™¤äº§å‡
   DELETE FROM INCENTIVE_RT_HRDATA T
    WHERE IMONTH > = V_MONTH1
      AND IMONTH || '+' || WWID IN
@@ -92,8 +92,8 @@ BEGIN
             FROM INC_HR_MATERNITY_MONTH);
   COMMIT;
 
-  /*ÔÂ¼ÙÆÚ */
-  --ÁÙÊ±¼ÙÆÚ
+  /*æœˆå‡æœŸ */
+  --ä¸´æ—¶å‡æœŸ
   DELETE FROM INCENTIVE_HR_MONTH_RATIO_TEMP1;
   INSERT INTO INCENTIVE_HR_MONTH_RATIO_TEMP1
     SELECT IMONTH, WWID, SUM(DAYS) DAYS, MIN(TERMINATION) TERMINATION
@@ -104,7 +104,7 @@ BEGIN
               FROM INC_HR_ABSENCE_MONTH T2)
      WHERE IMONTH IN (V_MONTH1, V_MONTH2, V_MONTH3)
      GROUP BY IMONTH, WWID;
-  --ÔÂ¼ÙÆÚ
+  --æœˆå‡æœŸ
   DELETE FROM INCENTIVE_HR_MONTH_RATIO WHERE Q = I_Q;
   INSERT INTO INCENTIVE_HR_MONTH_RATIO
     SELECT IMONTH,
@@ -122,7 +122,7 @@ BEGIN
            TERMINATION
       FROM INCENTIVE_HR_MONTH_RATIO_TEMP1 T;
 
-  /*´¦ÀíÀëÖ°ÓÖÈëÖ° */
+  /*å¤„ç†ç¦»èŒåˆå…¥èŒ */
   DELETE FROM INCENTIVE_RT_HRDATA T
    WHERE EXISTS (SELECT 1
             FROM (SELECT DISTINCT T1.WWID, T2.STARTDATE
@@ -131,13 +131,13 @@ BEGIN
                    WHERE T1.IMONTH IN (V_MONTH1, V_MONTH2, V_MONTH3)
                      AND T2.IMONTH IN (V_MONTH1, V_MONTH2, V_MONTH3)
                      AND T1.WWID = T2.WWID
-                     AND T1.ACTION = 'ÈëÖ°'
+                     AND T1.ACTION = 'å…¥èŒ'
                      AND T1.STARTDATE > T2.STARTDATE) T3
            WHERE T.WWID = T3.WWID
              AND T.IMONTH || '-15' <= T3.STARTDATE
              AND T.IMONTH IN (V_MONTH1, V_MONTH2, V_MONTH3));
 
-  --HR ¼Ü¹¹ÐÅÏ¢
+  --HR æž¶æž„ä¿¡æ¯
   DELETE FROM INCENTIVE_SFE_RT_WWID T WHERE IMONTH IN (V_MONTH1, V_MONTH2, V_MONTH3);
 
   INSERT INTO INCENTIVE_SFE_RT_WWID
@@ -225,16 +225,16 @@ BEGIN
      WHERE T.BU = 'OTC CRS'
        AND T.Q = I_Q
        AND T.POSITION IN ('MT', 'AS', 'AM', 'AE');
-  --ÑéÖ¤ HR_RATIO ÊÇ·ñË¢ÐÂ¹ýÀ´
+  --éªŒè¯ HR_RATIO æ˜¯å¦åˆ·æ–°è¿‡æ¥
   --SELECT COUNT(1) INTO V_ROW_NUM FROM INCENTIVE_HR_RATIO T WHERE T.Q = I_Q;
 
   -----------------------------------------------------------------------
-  --¹ý³Ì½áÊø
+  --è¿‡ç¨‹ç»“æŸ
   COMMIT;
-  P_INCENTIVE_LOG_INFO_UPDATE(V_LOG_ID, 1, '³É¹¦', '');
+  P_INCENTIVE_LOG_INFO_UPDATE(V_LOG_ID, 1, 'æˆåŠŸ', '');
 EXCEPTION
   WHEN OTHERS THEN
-    P_INCENTIVE_LOG_INFO_UPDATE(V_LOG_ID, 0, 'Ê§°Ü', SQLERRM);
+    P_INCENTIVE_LOG_INFO_UPDATE(V_LOG_ID, 0, 'å¤±è´¥', SQLERRM);
 
 END;
 /

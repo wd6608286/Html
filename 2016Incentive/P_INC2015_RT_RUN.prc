@@ -1,8 +1,8 @@
-CREATE OR REPLACE PROCEDURE P_INC2015_RT_RUN(I_Q IN VARCHAR2) IS
+ï»¿CREATE OR REPLACE PROCEDURE P_INC2015_RT_RUN(I_Q IN VARCHAR2) IS
   /*****************************************
-  --¹¦ÄÜ£ºRETAIL ½±½ð¼ÆËãµÄÈ«¹ý³Ì
-  --Ê±¼ä£º2013-01-23
-  --×÷Õß£ºÌ·³¬
+  --åŠŸèƒ½ï¼šRETAIL å¥–é‡‘è®¡ç®—çš„å…¨è¿‡ç¨‹
+  --æ—¶é—´ï¼š2013-01-23
+  --ä½œè€…ï¼šè°­è¶…
   ******************************************/
 
   V_LOG_ID     NUMBER;
@@ -16,13 +16,13 @@ CREATE OR REPLACE PROCEDURE P_INC2015_RT_RUN(I_Q IN VARCHAR2) IS
 
 BEGIN
 
-  V_LOG_ID     := F_INCENTIVE_LOG_ID; --»ñÈ¡ÈÕÖ¾ID
-  V_PROC_NAME  := 'P_INC2015_RT_RUN'; --¹ý³ÌÃû
-  V_PARM_VALUS := I_Q; --¹ý³ÌÊäÈë²ÎÊý
-  --²åÈëÈÕÖ¾
+  V_LOG_ID     := F_INCENTIVE_LOG_ID; --èŽ·å–æ—¥å¿—ID
+  V_PROC_NAME  := 'P_INC2015_RT_RUN'; --è¿‡ç¨‹å
+  V_PARM_VALUS := I_Q; --è¿‡ç¨‹è¾“å…¥å‚æ•°
+  --æ’å…¥æ—¥å¿—
   P_INCENTIVE_LOG_INFO_INSERT(V_LOG_ID, V_PROC_NAME, V_PARM_VALUS);
 
-  --¹ý³ÌÄÚÈÝ
+  --è¿‡ç¨‹å†…å®¹
   -----------------------------------------------------------------------
   IF SUBSTR(I_Q, 5, 2) = 'Q1' THEN
     V_MONTH1 := SUBSTR(I_Q, 1, 4) || '-01';
@@ -49,14 +49,14 @@ BEGIN
   END IF;
 
   --V_YEAR := SUBSTR(I_Q, 1, 4);
-  --¸úÐÂHRÐÅÏ¢
+  --è·Ÿæ–°HRä¿¡æ¯
   P_INCENTIVE_RT_HRDATA(I_Q);  
 
   P_INCENTIVE_RT_COMMERCIAL(V_MONTH1);
   P_INCENTIVE_RT_COMMERCIAL(V_MONTH2);
   P_INCENTIVE_RT_COMMERCIAL(V_MONTH3);
 
-  --RETAIL»ù´¡±í
+  --RETAILåŸºç¡€è¡¨
   P_INC2014_RT_SALES1(V_MONTH1);
   P_INC2014_RT_SALES1(V_MONTH2);
   P_INC2014_RT_SALES1(V_MONTH3);
@@ -73,8 +73,8 @@ BEGIN
   P_INC2015_RT_SALES2(I_Q, 'AM');
   P_INC2015_RT_SALES2(I_Q, 'AE');
 
-  --Ã»ÓÐ
-  --P_INCENTIVE_RT_SALES2(I_Q, 'NKAM'); --Ã»ÓÐ
+  --æ²¡æœ‰
+  --P_INCENTIVE_RT_SALES2(I_Q, 'NKAM'); --æ²¡æœ‰
 
   P_INC2014_RT_SALES3_MONTH(V_MONTH1);
   P_INC2014_RT_SALES3_MONTH(V_MONTH2);
@@ -122,21 +122,21 @@ BEGIN
   P_INC2014_RT_POP_Q(I_Q);
 
   -----------------------------------------------------------------------
-  --¹ý³Ì½áÊø
+  --è¿‡ç¨‹ç»“æŸ
   COMMIT;
-  P_INCENTIVE_LOG_INFO_UPDATE(V_LOG_ID, 1, '³É¹¦', '');
-  --ÔËÐÐµÄ¹ý³ÌµÄÈÕÖ¾ÂÔÓÐ²»Í¬£¬´óÓÚÈÕÖ¾ID Ö»ÒªÓÐÊ§°Ü¾ÍÊ§°Ü
+  P_INCENTIVE_LOG_INFO_UPDATE(V_LOG_ID, 1, 'æˆåŠŸ', '');
+  --è¿è¡Œçš„è¿‡ç¨‹çš„æ—¥å¿—ç•¥æœ‰ä¸åŒï¼Œå¤§äºŽæ—¥å¿—ID åªè¦æœ‰å¤±è´¥å°±å¤±è´¥
   SELECT COUNT(1)
     INTO V_ROW_NUM
     FROM INCENTIVE_LOG_INFO T
    WHERE T.LOG_ID > V_LOG_ID
      AND T.EXE_FLAG = '0';
   IF V_ROW_NUM > 0 THEN
-    P_INCENTIVE_LOG_INFO_UPDATE(V_LOG_ID, 0, 'Ê§°Ü', SQLERRM);
+    P_INCENTIVE_LOG_INFO_UPDATE(V_LOG_ID, 0, 'å¤±è´¥', SQLERRM);
   END IF;
 EXCEPTION
   WHEN OTHERS THEN
-    P_INCENTIVE_LOG_INFO_UPDATE(V_LOG_ID, 0, 'Ê§°Ü', SQLERRM);
+    P_INCENTIVE_LOG_INFO_UPDATE(V_LOG_ID, 0, 'å¤±è´¥', SQLERRM);
 
 END;
 /

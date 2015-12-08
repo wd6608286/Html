@@ -1,9 +1,9 @@
-CREATE OR REPLACE PROCEDURE P_INC2015_RT_KAW6_INDEX_SALES3(I_Q        VARCHAR2,
+ï»¿CREATE OR REPLACE PROCEDURE P_INC2015_RT_KAW6_INDEX_SALES3(I_Q        VARCHAR2,
                                                            I_POSITION VARCHAR2) IS
   /*****************************************
-  --¹¦ÄÜ£ºÐÐ×ªÁÐ
-  --Ê±¼ä£º2013-01-14
-  --×÷Õß£ºÌ·³¬
+  --åŠŸèƒ½ï¼šè¡Œè½¬åˆ—
+  --æ—¶é—´ï¼š2013-01-14
+  --ä½œè€…ï¼šè°­è¶…
   ******************************************/
 
   V_LOG_ID     NUMBER;
@@ -12,16 +12,16 @@ CREATE OR REPLACE PROCEDURE P_INC2015_RT_KAW6_INDEX_SALES3(I_Q        VARCHAR2,
 
 BEGIN
 
-  V_LOG_ID     := F_INCENTIVE_LOG_ID; --»ñÈ¡ÈÕÖ¾ID
-  V_PROC_NAME  := 'P_INC2015_RT_KAW6_INDEX_SALES3'; --¹ý³ÌÃû
-  V_PARM_VALUS := I_Q || ',' || I_POSITION; --¹ý³ÌÊäÈë²ÎÊý
-  --²åÈëÈÕÖ¾
+  V_LOG_ID     := F_INCENTIVE_LOG_ID; --èŽ·å–æ—¥å¿—ID
+  V_PROC_NAME  := 'P_INC2015_RT_KAW6_INDEX_SALES3'; --è¿‡ç¨‹å
+  V_PARM_VALUS := I_Q || ',' || I_POSITION; --è¿‡ç¨‹è¾“å…¥å‚æ•°
+  --æ’å…¥æ—¥å¿—
   P_INCENTIVE_LOG_INFO_INSERT(V_LOG_ID, V_PROC_NAME, V_PARM_VALUS);
 
-  --¹ý³ÌÄÚÈÝ
+  --è¿‡ç¨‹å†…å®¹
   -----------------------------------------------------------------------
 
-  --Çå³þÊý¾Ý
+  --æ¸…æ¥šæ•°æ®
   EXECUTE IMMEDIATE 'TRUNCATE TABLE INC2014_RT_SALES3_TP01';
 
   DELETE FROM INC2014_RT_SALES3 T
@@ -82,7 +82,7 @@ BEGIN
      WHERE T.SALES_CSHQ <> 0
        AND T.TARGET_CSHQ <> 0;
 
-  --±£´æÀúÊ·ÅÅÃû£¬È¡×î¸ßÅÅÃû£¬¼´×îÐ¡Êý
+  --ä¿å­˜åŽ†å²æŽ’åï¼Œå–æœ€é«˜æŽ’åï¼Œå³æœ€å°æ•°
   DELETE FROM INC2014_RT_SALES3_RANK T
    WHERE Q = I_Q
      AND T.UPDATETIME <=
@@ -113,12 +113,12 @@ BEGIN
     UPDATE SET T.RK_GROW = T2.RK_GROW, T.ACH_GROW = T2.ACH_GROW;
 
   -----------------------------------------------------------------------
-  --¹ý³Ì½áÊø
+  --è¿‡ç¨‹ç»“æŸ
   COMMIT;
-  P_INCENTIVE_LOG_INFO_UPDATE(V_LOG_ID, 1, '³É¹¦', '');
+  P_INCENTIVE_LOG_INFO_UPDATE(V_LOG_ID, 1, 'æˆåŠŸ', '');
 EXCEPTION
   WHEN OTHERS THEN
-    P_INCENTIVE_LOG_INFO_UPDATE(V_LOG_ID, 0, 'Ê§°Ü', SQLERRM);
+    P_INCENTIVE_LOG_INFO_UPDATE(V_LOG_ID, 0, 'å¤±è´¥', SQLERRM);
   
 END;
 /
