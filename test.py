@@ -1,23 +1,23 @@
-#!c:\pyhton
+ï»¿#!c:\pyhton
 # -*- coding: utf-8 -*-
-# ÎÄ¼şÃû£ºtest.py
+# æ–‡ä»¶åï¼štest.py
 
-from Tkinter import *           # µ¼Èë Tkinter ¿â
-root = Tk()                     # ´´½¨´°¿Ú¶ÔÏóµÄ±³¾°É«
-                                # ´´½¨Á½¸öÁĞ±í
+from Tkinter import *           # å¯¼å…¥ Tkinter åº“
+root = Tk()                     # åˆ›å»ºçª—å£å¯¹è±¡çš„èƒŒæ™¯è‰²
+                                # åˆ›å»ºä¸¤ä¸ªåˆ—è¡¨
 li     = ['C','python','php','html','SQL','java']
 movie  = ['CSS','jQuery','Bootstrap']
-listb  = Listbox(root)          #  ´´½¨Á½¸öÁĞ±í×é¼ş
+listb  = Listbox(root)          #  åˆ›å»ºä¸¤ä¸ªåˆ—è¡¨ç»„ä»¶
 listb2 = Listbox(root)
-for item in li:                 # µÚÒ»¸öĞ¡²¿¼ş²åÈëÊı¾İ
+for item in li:                 # ç¬¬ä¸€ä¸ªå°éƒ¨ä»¶æ’å…¥æ•°æ®
     listb.insert(0,item)
 
-for item in movie:              # µÚ¶ş¸öĞ¡²¿¼ş²åÈëÊı¾İ
+for item in movie:              # ç¬¬äºŒä¸ªå°éƒ¨ä»¶æ’å…¥æ•°æ®
     listb2.insert(0,item)
 
-listb.pack()                    # ½«Ğ¡²¿¼ş·ÅÖÃµ½Ö÷´°¿ÚÖĞ
+listb.pack()                    # å°†å°éƒ¨ä»¶æ”¾ç½®åˆ°ä¸»çª—å£ä¸­
 listb2.pack()
-root.mainloop()                 # ½øÈëÏûÏ¢Ñ­»·
+root.mainloop()                 # è¿›å…¥æ¶ˆæ¯å¾ªç¯
 
 a=int(raw_input('Please input number a:'))
 b=int(raw_input('Please input number b:'))
@@ -27,7 +27,7 @@ if a > 0 and b > 0:
     print "True"
 else:
     print "Answer"
-    # Ã»ÓĞÑÏ¸ñËõ½ø£¬ÔÚÖ´ĞĞÊ±±£³Ö
+    # æ²¡æœ‰ä¸¥æ ¼ç¼©è¿›ï¼Œåœ¨æ‰§è¡Œæ—¶ä¿æŒ
      print "False"
 
 print 'The result for a - b is:' ,a-b
@@ -38,17 +38,17 @@ print 'The result for a / b is:' ,a/b
 days = ['Monday', 'Tuesday', 'Wednesday',
         'Thursday', 'Friday']
 word = 'word'
-sentence = "ÕâÊÇÒ»¸ö¾ä×Ó¡£"
-paragraph = """ÕâÊÇÒ»¸ö¶ÎÂä¡£
-°üº¬ÁË¶à¸öÓï¾ä"""
+sentence = "è¿™æ˜¯ä¸€ä¸ªå¥å­ã€‚"
+paragraph = """è¿™æ˜¯ä¸€ä¸ªæ®µè½ã€‚
+åŒ…å«äº†å¤šä¸ªè¯­å¥"""
 
 print days,word,sentence,paragraph
 
 str = 'Hello World!'
 
-print str # Êä³öÍêÕû×Ö·û´®
-print str[0] # Êä³ö×Ö·û´®ÖĞµÄµÚÒ»¸ö×Ö·û
-print str[2:5] # Êä³ö×Ö·û´®ÖĞµÚÈı¸öÖÁµÚÎå¸öÖ®¼äµÄ×Ö·û´®
-print str[2:] # Êä³ö´ÓµÚÈı¸ö×Ö·û¿ªÊ¼µÄ×Ö·û´®
-print str * 2 # Êä³ö×Ö·û´®Á½´Î
-print str + "TEST" # Êä³öÁ¬½ÓµÄ×Ö·û´®
+print str # è¾“å‡ºå®Œæ•´å­—ç¬¦ä¸²
+print str[0] # è¾“å‡ºå­—ç¬¦ä¸²ä¸­çš„ç¬¬ä¸€ä¸ªå­—ç¬¦
+print str[2:5] # è¾“å‡ºå­—ç¬¦ä¸²ä¸­ç¬¬ä¸‰ä¸ªè‡³ç¬¬äº”ä¸ªä¹‹é—´çš„å­—ç¬¦ä¸²
+print str[2:] # è¾“å‡ºä»ç¬¬ä¸‰ä¸ªå­—ç¬¦å¼€å§‹çš„å­—ç¬¦ä¸²
+print str * 2 # è¾“å‡ºå­—ç¬¦ä¸²ä¸¤æ¬¡
+print str + "TEST" # è¾“å‡ºè¿æ¥çš„å­—ç¬¦ä¸²
