@@ -1,8 +1,8 @@
-CREATE OR REPLACE PROCEDURE P_INC2014_RT_W7_SALE3_MON(I_MONTH VARCHAR2,I_POSITION VARCHAR2) IS
+ï»¿CREATE OR REPLACE PROCEDURE P_INC2014_RT_W7_SALE3_MON(I_MONTH VARCHAR2,I_POSITION VARCHAR2) IS
   /*****************************************
-  --¹¦ÄÜ£ºÐÐ×ªÁÐ
-  --Ê±¼ä£º2013-01-14
-  --×÷Õß£ºÌ·³¬
+  --åŠŸèƒ½ï¼šè¡Œè½¬åˆ—
+  --æ—¶é—´ï¼š2013-01-14
+  --ä½œè€…ï¼šè°­è¶…
   ******************************************/
 
   V_LOG_ID     NUMBER;
@@ -12,18 +12,18 @@ CREATE OR REPLACE PROCEDURE P_INC2014_RT_W7_SALE3_MON(I_MONTH VARCHAR2,I_POSITIO
 
 BEGIN
 
-  V_LOG_ID     := F_INCENTIVE_LOG_ID; --»ñÈ¡ÈÕÖ¾ID
-  V_PROC_NAME  := 'P_INC2014_RT_W7_SALE3_MON'; --¹ý³ÌÃû
-  V_PARM_VALUS := I_MONTH; --¹ý³ÌÊäÈë²ÎÊý
-  --²åÈëÈÕÖ¾
+  V_LOG_ID     := F_INCENTIVE_LOG_ID; --èŽ·å–æ—¥å¿—ID
+  V_PROC_NAME  := 'P_INC2014_RT_W7_SALE3_MON'; --è¿‡ç¨‹å
+  V_PARM_VALUS := I_MONTH; --è¿‡ç¨‹è¾“å…¥å‚æ•°
+  --æ’å…¥æ—¥å¿—
   P_INCENTIVE_LOG_INFO_INSERT(V_LOG_ID, V_PROC_NAME, V_PARM_VALUS);
 
-  --¹ý³ÌÄÚÈÝ
+  --è¿‡ç¨‹å†…å®¹
   -----------------------------------------------------------------------
   V_Q := SUBSTR(I_MONTH, 1, 4) || 'Q' ||
          TO_CHAR(TO_DATE(I_MONTH, 'YYYY-MM'), 'Q');
 
-  --Çå³þÊý¾Ý
+  --æ¸…æ¥šæ•°æ®
   EXECUTE IMMEDIATE 'TRUNCATE TABLE INCENTIVE_RT_SALES2_YTD_TP01';
 
   DELETE FROM INCENTIVE_RT_SALES2_YTD T WHERE T.IMONTH = I_MONTH AND T.POSITION=I_POSITION;
@@ -80,12 +80,12 @@ BEGIN
       FROM INCENTIVE_RT_SALES2_YTD_TP01 T;
 
   -----------------------------------------------------------------------
-  --¹ý³Ì½áÊø
+  --è¿‡ç¨‹ç»“æŸ
   COMMIT;
-  P_INCENTIVE_LOG_INFO_UPDATE(V_LOG_ID, 1, '³É¹¦', '');
+  P_INCENTIVE_LOG_INFO_UPDATE(V_LOG_ID, 1, 'æˆåŠŸ', '');
 EXCEPTION
   WHEN OTHERS THEN
-    P_INCENTIVE_LOG_INFO_UPDATE(V_LOG_ID, 0, 'Ê§°Ü', SQLERRM);
+    P_INCENTIVE_LOG_INFO_UPDATE(V_LOG_ID, 0, 'å¤±è´¥', SQLERRM);
 
 END;
 /

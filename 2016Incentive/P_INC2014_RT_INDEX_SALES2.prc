@@ -1,9 +1,9 @@
-CREATE OR REPLACE PROCEDURE P_INC2014_RT_INDEX_SALES2(I_Q        VARCHAR2,
+ï»¿CREATE OR REPLACE PROCEDURE P_INC2014_RT_INDEX_SALES2(I_Q        VARCHAR2,
                                                       I_POSITION VARCHAR2) IS
   /*****************************************
-  --¹¦ÄÜ£ºÐÐ×ªÁÐ
-  --Ê±¼ä£º2013-01-14
-  --×÷Õß£ºÌ·³¬
+  --åŠŸèƒ½ï¼šè¡Œè½¬åˆ—
+  --æ—¶é—´ï¼š2013-01-14
+  --ä½œè€…ï¼šè°­è¶…
   ******************************************/
 
   V_LOG_ID     NUMBER;
@@ -15,13 +15,13 @@ CREATE OR REPLACE PROCEDURE P_INC2014_RT_INDEX_SALES2(I_Q        VARCHAR2,
 
 BEGIN
 
-  V_LOG_ID     := F_INCENTIVE_LOG_ID; --»ñÈ¡ÈÕÖ¾ID
-  V_PROC_NAME  := 'P_INC2014_RT_INDEX_SALES2'; --¹ý³ÌÃû
-  V_PARM_VALUS := I_Q || ',' || I_POSITION; --¹ý³ÌÊäÈë²ÎÊý
-  --²åÈëÈÕÖ¾
+  V_LOG_ID     := F_INCENTIVE_LOG_ID; --èŽ·å–æ—¥å¿—ID
+  V_PROC_NAME  := 'P_INC2014_RT_INDEX_SALES2'; --è¿‡ç¨‹å
+  V_PARM_VALUS := I_Q || ',' || I_POSITION; --è¿‡ç¨‹è¾“å…¥å‚æ•°
+  --æ’å…¥æ—¥å¿—
   P_INCENTIVE_LOG_INFO_INSERT(V_LOG_ID, V_PROC_NAME, V_PARM_VALUS);
 
-  --¹ý³ÌÄÚÈÝ
+  --è¿‡ç¨‹å†…å®¹
   -----------------------------------------------------------------------
   IF SUBSTR(I_Q, 5, 2) = 'Q1' THEN
     V_MONTH1 := SUBSTR(I_Q, 1, 4) || '-01';
@@ -47,7 +47,7 @@ BEGIN
     V_MONTH3 := SUBSTR(I_Q, 1, 4) || '-12';
   END IF;
 
-  --Çå³þÊý¾Ý
+  --æ¸…æ¥šæ•°æ®
   DELETE FROM INC2014_RT_INDEX_SALES2 T
    WHERE T.Q = I_Q
      AND T.POSITION = I_POSITION;
@@ -135,13 +135,13 @@ BEGIN
        AND S1.WWID = S2.WWID;
 
   -----------------------------------------------------------------------
-  --¹ý³Ì½áÊø
+  --è¿‡ç¨‹ç»“æŸ
   COMMIT;
 
-  P_INCENTIVE_LOG_INFO_UPDATE(V_LOG_ID, 1, '³É¹¦', '');
+  P_INCENTIVE_LOG_INFO_UPDATE(V_LOG_ID, 1, 'æˆåŠŸ', '');
 EXCEPTION
   WHEN OTHERS THEN
-    P_INCENTIVE_LOG_INFO_UPDATE(V_LOG_ID, 0, 'Ê§°Ü', SQLERRM);
+    P_INCENTIVE_LOG_INFO_UPDATE(V_LOG_ID, 0, 'å¤±è´¥', SQLERRM);
 
 END;
 /
